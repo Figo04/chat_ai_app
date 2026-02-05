@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 enum MessageRole { user, assistant, system }
 
 class Message {

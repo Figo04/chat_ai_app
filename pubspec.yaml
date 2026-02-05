@@ -36,7 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # Gemini API
-  google_generative_ai: ^0.2.2
+  google_generative_ai: ^0.4.7
+  
   
   # State Management
   flutter_riverpod: ^2.4.9

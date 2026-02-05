@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:js_interop';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chat_bot_apps/models/message.dart';
 

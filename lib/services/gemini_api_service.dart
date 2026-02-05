@@ -8,7 +8,7 @@ class GeminiApiService {
 
   GeminiApiService() {
     _model = GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model: "gemini-2.5-flash",
       apiKey: _apiKey,
       generationConfig: GenerationConfig(
         temperature: 0.7,
@@ -20,9 +20,12 @@ class GeminiApiService {
   Future<String> sendMessage(List<Message> conversationHistory) async {
     try {
       // Convert conversation history to gemini format
-      final chatHistory = conversationHistory.where((msg) => msg.role != MessageRole.system).map((msg) {
-        return Content.text(msg.content);
-      }).toList();
+      final chatHistory = conversationHistory
+          .where((msg) => msg.role != MessageRole.system)
+          .map((msg) {
+            return Content.text(msg.content);
+          })
+          .toList();
 
       // Create chat session with history
       final chat = _model.startChat(
@@ -48,5 +51,4 @@ class GeminiApiService {
       throw Exception('Failed to generate response: $e');
     }
   }
-
 }
